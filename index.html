@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image loading</title>
+</head>
+<body>
+    <img src="header_image.jpg" alt="" class="img-1">
+    <script>
+        var img1 = document.querySelector('.img-1');
+
+        setTimeout(console.log(img1.complete), 3000);
+
+        function loaded() {
+            console.log("img loaded");
+        }
+
+        if (img1.complete) {
+            loaded();
+        }
+        else {
+            img1.addEventListener('load', loaded);
+        }
+
+        img1.addEventListener('error', function() {
+            console.error(error);
+        });
+    </script>   
+</body>
+</html>
